@@ -1,9 +1,9 @@
 <template>
-<v-responsive style="aspect-ratio: 16:9">
-  <v-main style="padding: 0px;">
+<v-responsive class="wrapper">
+  <v-main>
     <Layout>
       <template #content>
-        <div class="header">
+          <v-container class="header">
           <v-row class="firstDiv">
           <v-col class="col">
             <div class="text" style="padding-top: 100px;">
@@ -26,24 +26,51 @@
             />
           </v-col>
           </v-row>
+        <div class="secondSection">
+          <v-parallax src="@/assets/7.png">
+            <v-row align="left" justify="left" text-align="left">
+              <v-col class="text-center" cols="12">
+                <h1>
+                  딥러닝 기반으로한 이미지 분석 사이트
+                </h1>
+                <h4>
+                  1500000개 이상의 데이터를 사용하여 사물을 인식합니다.
+                </h4>
+              </v-col>
+            </v-row>
+          </v-parallax>
         </div>
-        <div style="padding-top: 300px;">
-        <v-parallax src="@/assets/3.jpg" height="300">
-          <v-row align="left" justify="left" text-align="left">
-            <v-col class="text-center" cols="12">
-              <h1>
-                딥러닝 기반으로한 이미지 분석 사이트
-              </h1>
-              <h4>
-                1500000개 이상의 데이터를 사용하여 사물을 인식합니다.
-              </h4>
-            </v-col>
-          </v-row>
-        </v-parallax>
+        <div class="paras">
+        <div class="para"><h1>Why Us?</h1></div>
+        <div class="para2"><h3>accuracy</h3></div>
+        <div class="para3"><h3>simplicity accuracy</h3></div>
+        <div class="para4"><h3>accuracy simplicity practical</h3></div>
         </div>
-        <div id="info">
+        <div class="thirdSection">
+        <v-flex>
+        <v-row>
+          <v-col>
+            <h1 style="border-bottom: 1px solid #000000">정확도</h1>
+            <h4 style="margin-top: 10px">이미 검증된 라이브러리를 활용한 정확성</h4>
+            <img src="@/assets/dog.jpg" class="dogPics" v-scrollanimation>
+            <h6 v-scrollanimation>dog</h6>
+          </v-col>
+          <v-col style="margin-top: 200px">
+            <h1 style="border-bottom: 1px solid #5e5e5e">간편함</h1>
+            <h4 style="margin-top: 10px">버튼 하나로 사용하는 서비스</h4>
+            <img src="@/assets/beach.jpg" class="dogPics" v-scrollanimation/>
+            <h6 v-scrollanimation>beach</h6>
+          </v-col>
+          <v-col style="margin-top: 410px">
+            <h1 style="border-bottom: 1px solid #a3a3a3">실용성</h1>
+            <h4 style="margin-top: 10px">다양한 분야에 사용이 가능</h4>
+            <img src="@/assets/macbook.jpg" class="dogPics" v-scrollanimation/>
+            <h6 v-scrollanimation>laptop</h6>
+          </v-col>
+        </v-row>
+        </v-flex>
         </div>
-        <v-parallax src="@/assets/4.jpg" max-height="500px"></v-parallax>
+        </v-container>
       </template>
     </Layout>
   </v-main>
@@ -80,7 +107,7 @@ export default {
 
 <style>
 div {
-  /* border: 2px solid black; */
+  /* border: 2px solid x zblack; */
 }
 
 #text {
@@ -101,6 +128,15 @@ div {
 }
 h6 {
   font-size: 20px;
+}
+.thirdSection {
+  margin-top: 10px;
+  text-align: center;
+}
+.dogPics {
+  margin-top: 25px;
+  max-width: 500px;
+  max-height: 300px;
 }
 .header {
   max-width: 100%;
@@ -123,22 +159,43 @@ h6 {
   opacity: 1;
   transform: translateX(0px);
 }
-.text {
+.secondSection {
+  padding-top: 20vh;
+  background-size: 100% auto;
+}
+.para {
+  position: absolute;
+  margin-top: 5vh;
+  margin-left: 120vh;
   font-size: 80px;
+}
+.para2 {
+  position: absolute;
+  margin-top: 30%;
+  font-size: 60px;
+}
+.para3 {
+  position: absolute;
+  margin-top: 39%;
+  font-size: 60px;
+}
+.para4 {
+  position: absolute;
+  margin-top: 48%;
+  font-size: 60px;
+}
+.text {
+  font-size: 75px;
   font-weight: 900;
 }
-.button-leave-active,
-.button-enter-active {
-  transition: 1.5s;
-  opacity: 1;
-}
-.button-enter{
-  transform: translate(100%, 0);
-  opacity: 0;
-}
-
-.button-leave-to {
-  transform: translate(-100%, 0);
-  opacity: 0;
+.wrapper {
+  padding: 10px;
+  background: white;
+  box-sizing: border-box;
+  resize: horizontal;
+  border: 1px dashed;
+  overflow: auto;
+  max-width: 100%;
+  height: calc(350vh - 16px);
 }
 </style>
