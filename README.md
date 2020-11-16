@@ -1,2 +1,2 @@
-# Reassignment
-Re-Build Team
+# DINF
+이지하, 문종후, 김경완
