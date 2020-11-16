@@ -1,11 +1,11 @@
 <template>
 <v-responsive style="aspect-ratio: 16:9">
-  <v-main style="padding: 0px;">
+  <v-main style="padding-top: 100px;">
     <template>
       <Layout>
         <template #content>
-          <v-row align-content="center">
-            <v-col>
+          <v-row>
+            <v-col class="col">
               <v-img src="@/assets/1.jpg" class="img" @click="show = 1" />
             </v-col>
             <v-col>
@@ -16,19 +16,25 @@
             </v-col>
           </v-row>
           <transition name="slide">
-          <div v-if="show === 1" class="box1">
-              {{ tada1 }}
-          </div>
-          </transition>
-          <transition name="slide">
-          <div v-if="show === 2" class="box2">
-              {{ tada1 }}
-          </div>
-          </transition>
-          <transition name="slide">
-          <div v-if="show === 3" class="box3">
-              {{ tada1 }}
-          </div>
+            <div v-if="show === 0" class="box0"
+            >
+              Click on the image to see our detail!
+            </div>
+            </transition>
+            <transition name="slide">
+            <div v-if="show === 1" class="box1">
+                {{ tada1 }}
+            </div>
+            </transition>
+            <transition name="slide">
+            <div v-if="show === 2" class="box2">
+                {{ tada1 }}
+            </div>
+            </transition>
+            <transition name="slide">
+            <div v-if="show === 3" class="box3">
+                {{ tada1 }}
+            </div>
           </transition>
         </template>
       </Layout>
@@ -59,6 +65,17 @@ export default {
 </script>
 
 <style scoped>
+#content {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.box0 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
+}
 .box1 {
   background-color: gainsboro;
   height: 750px;
@@ -91,6 +108,9 @@ export default {
   border-radius: 50%;
   height: 200px;
   width: 200px;
+}
+.col {
+  text-align: -webkit-center;
 }
 .slide-leave-active,
 .slide-enter-active {

@@ -3,10 +3,10 @@
   <v-main style="padding: 0px;">
     <Layout>
       <template #content>
-        <v-container fluid class="header">
-          <v-row>
+        <div class="header">
+          <v-row class="firstDiv">
           <v-col class="col">
-            <div class="text">
+            <div class="text" style="padding-top: 100px;">
               <p v-scrollanimation>BIT IMAGE는 기계 학습을 통해</p>
               <p v-scrollanimation>당신의 이미지를 분석합니다.</p>
               <br/>
@@ -21,24 +21,26 @@
           </v-col>
           <v-col class="col" md="5">
             <v-parallax
-            src="@/assets/10.jpg"
+            src="@/assets/6.jpg"
             height="1000"
             />
           </v-col>
           </v-row>
-        </v-container>
-        <v-parallax src="@/assets/3.jpg" height="750">
-          <v-row align="left" justify="left" text-align="left" margin-top="10px">
-            <v-col class="text-center" cols="12" style="mergy-top: 10px">
+        </div>
+        <div style="padding-top: 300px;">
+        <v-parallax src="@/assets/3.jpg" height="300">
+          <v-row align="left" justify="left" text-align="left">
+            <v-col class="text-center" cols="12">
               <h1>
-                딥러닝 기반으로한 음악 추천 서비스
+                딥러닝 기반으로한 이미지 분석 사이트
               </h1>
-              <h4 class="subheading">
-                5000가지 이상의 데이터로 당신의 취향을 분석해드립니다
+              <h4>
+                1500000개 이상의 데이터를 사용하여 사물을 인식합니다.
               </h4>
             </v-col>
           </v-row>
         </v-parallax>
+        </div>
         <div id="info">
         </div>
         <v-parallax src="@/assets/4.jpg" max-height="500px"></v-parallax>
@@ -95,13 +97,12 @@ div {
 
 #content {
   height: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h6 {
   font-size: 20px;
 }
 .header {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   max-width: 100%;
   height: 37%;
   text-align: left;

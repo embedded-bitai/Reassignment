@@ -1,5 +1,5 @@
 <template>
-<v-main>
+<v-main style="padding: 0px;">
   <v-app-bar height="100px" app flat color="#FFFFFF" hide-on-scroll target="#tarege" scroll-threshold="75">
     <v-toolbar-title>
       <div @click="Home">
