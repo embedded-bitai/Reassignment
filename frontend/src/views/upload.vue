@@ -3,7 +3,7 @@
     <v-main>
       <Layout>
         <template #content>
-          <div align-center>
+          <div align-center style="">
               <img
                     src="@/assets/cara.png"
                     max-width=250px
@@ -16,9 +16,16 @@
               </div>
           </div>
             <div>
-              <input type='file' @change="onFileSelected">
-              <button @click="onUpload">upload</button>
+              <file-pond
+                    name="bin"
+                    ref="pond"
+                    allow-multiple="false"
+                    max-files="1"
+                    accepted-file-types="image/*"
+                    :server="server"
+                  />
             </div>
+            <button @click="imgokbtn">upload</button>
         </template>
       </Layout>
     </v-main>
@@ -28,15 +35,30 @@
 <script>
 import axios from 'axios'
 import Layout from '../components/Layout'
+import vueFilePond from 'vue-filepond'
+import 'filepond/dist/filepond.min.css'
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
 
+const FilePond = vueFilePond(FilePondPluginFileValidateType)
 export default {
   data () {
     return {
-      selectedFile: null
+      selectedFile: null,
+      server: {
+        url: 'http://localhost:1234/file',
+        process: {
+          url: '/file'
+        },
+        revert: {
+          url: '/remove',
+          method: 'POST'
+        }
+      }
     }
   },
   components: {
-    Layout
+    Layout,
+    FilePond
   },
   methods: {
     onFileSelected (event) {
@@ -49,6 +71,25 @@ export default {
       axios.post('http://127.0.0.1:5000/', fd)
         .then(res => {
           console.log(res)
+        })
+    },
+    imgokbtn (nick) {
+      this.inputpoto = false
+      // console.log('myFiles : ' + nick)
+      const file = this.$refs.pond.getFile()
+      nick = file.filename
+      console.log('file Name : ' + nick)
+      axios.post('http://127.0.0.1:5000/img', { nick })
+        .then(res => {
+          console.log('res.data : ' + res.data)
+          this.pylistrember(res.data)
+          this.gra = res.data
+          this.file = res.data.join('-')
+          console.log('file : ' + this.file)
+          this.grapclick(0, 0)
+        })
+        .catch(err => {
+          alert(err)
         })
     }
   }
