@@ -8,7 +8,7 @@
         <h3>2020.09.19 SAT 8PM</h3>
         <h3>#POP #IDM #SINGERSONGWRITER</h3>
       </div>
-        <v-img src="@/assets/3.jpg" max-height="500px"></v-img>
+        <v-img src="@/assets/10.jpg" max-height="500px"></v-img>
       <div id="info">
         <h3>IZIHA</h3><br>
         <h3>2020.09.26 SAT 9PM</h3>

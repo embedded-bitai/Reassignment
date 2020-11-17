@@ -6,13 +6,13 @@
         <template #content>
           <v-row align-content="center">
             <v-col>
-              <v-img src="@/assets/1.jpg" class="img" @click="show = 1" />
+              <v-img src="@/assets/4.jpg" class="img" @click="show = 1" />
             </v-col>
             <v-col>
-              <v-img src="@/assets/3.jpg" class="img" @click="show = 2"/>
+              <v-img src="@/assets/10.jpg" class="img" @click="show = 2"/>
             </v-col>
             <v-col>
-              <v-img src="@/assets/4.jpg" class="img" @click="show = 3"/>
+              <v-img src="@/assets/testing.jpg" class="img" @click="show = 3"/>
             </v-col>
           </v-row>
           <transition name="slide">

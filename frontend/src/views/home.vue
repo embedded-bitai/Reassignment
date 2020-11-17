@@ -27,7 +27,7 @@
           </v-col>
           </v-row>
         </v-container>
-        <v-parallax src="@/assets/3.jpg" height="750">
+        <v-parallax src="@/assets/4.jpg" height="750">
           <v-row align="left" justify="left" text-align="left" margin-top="10px">
             <v-col class="text-center" cols="12" style="mergy-top: 10px">
               <h1>

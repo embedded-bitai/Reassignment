@@ -2,7 +2,7 @@
   <v-responsive style="aspect-ratio: 16:9">
     <v-main id="inspire">
       <v-container fluid style="padding: 5px">
-        <v-img src="@/assets/2.jpeg" max-height="870px">
+        <v-img src="@/assets/10.jpeg" max-height="870px">
           <div id="header">
             <h1>JOIN US</h1>
           </div>

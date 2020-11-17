@@ -2,7 +2,7 @@
 <v-responsive style="aspect-ratio: 16:9">
   <v-main>
     <v-container fluid style="padding: 5px">
-      <v-img src="@/assets/1.jpg" max-height="700px">
+      <v-img src="@/assets/10.jpg" max-height="700px">
         <div id="header">
           <h1>BIT MUSIC</h1>
         </div>
