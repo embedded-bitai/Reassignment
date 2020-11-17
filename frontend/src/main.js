@@ -7,7 +7,6 @@ import vuetify from './plugins/vuetify'
 import vuex from 'vuex'
 import VuePageTransition from 'vue-page-transition'
 import ScrollAnimation from './directives/scrollAnimation'
-import SideScrollAnimation from './directives/sideScrollAnimation'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
@@ -15,7 +14,6 @@ import moment from 'moment'
 import VueMoment from 'vue-moment'
 
 Vue.directive('scrollanimation', ScrollAnimation)
-Vue.directive('sideScrollanimation', SideScrollAnimation)
 
 Vue.config.productionTip = false
 

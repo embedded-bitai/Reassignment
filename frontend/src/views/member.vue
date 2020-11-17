@@ -85,23 +85,20 @@ export default {
   position: fixed;
   width: 30%;
   margin-top: 10px;
-  right: 0px;
 }
 .box2 {
   background-color: whitesmoke;
-  height: 750px;
-  width: 100%;
+  height: 100%;
   position: fixed;
+  width: 30%;
   margin-top: 10px;
-  right: 0px;
 }
 .box3 {
   background-color: aliceblue;
-  height: 750px;
-  width: 100%;
+  height: 100%;
   position: fixed;
+  width: 30%;
   margin-top: 10px;
-  right: 0px;
 }
 #content {
   height: auto;
