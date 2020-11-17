@@ -25,6 +25,6 @@
   position: absolute;
   width: 100%;
   left: 0;
-  padding: 2%;
+  padding: 4%;
 }
 </style>

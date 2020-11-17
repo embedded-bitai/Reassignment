@@ -3,11 +3,11 @@
   <v-app-bar height="100px" app flat color="#FFFFFF" hide-on-scroll target="#tarege" scroll-threshold="75">
     <v-toolbar-title>
       <div @click="Home">
-        <h1>BIT IMAGE</h1>
+        <h1  class="toolBar">BIT IMAGE</h1>
       </div>
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <slot name="menubar">
+    <slot name="menubar" class="menubar">
       <v-btn next to="/" text color="black" style="padding: 10px; width: 90px;">Home</v-btn>
       <v-btn next to="member" text color="black" style="padding: 10px; width: 90px;">members</v-btn>
       <v-btn next to="about" text color="black" style="padding: 10px; width: 90px;">about</v-btn>
@@ -51,3 +51,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.toolBar {
+  letter-spacing: 5px;
+  margin-left: 1.6vw;
+}
+
+.menuBar {
+}
+</style>

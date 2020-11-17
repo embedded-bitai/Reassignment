@@ -1,39 +1,39 @@
 <template>
-<v-responsive style="aspect-ratio: 16:9">
-  <v-main style="padding-top: 100px;">
+<v-responsive class="wrapper">
+  <v-main style="padding-top: 0vh;">
     <template>
       <Layout>
         <template #content>
-          <v-row>
+          <v-row class="memberPics">
             <v-col class="col">
               <v-img src="@/assets/1.jpg" class="img" @click="show = 1" />
+              <transition name="slide">
+              <div v-if="show === 1" class="box1">
+                  {{ tada1 }}
+              </div>
+              </transition>
             </v-col>
             <v-col>
               <v-img src="@/assets/3.jpg" class="img" @click="show = 2"/>
+              <transition name="slide">
+              <div v-if="show === 2" class="box2">
+                  {{ tada1 }}
+              </div>
+              </transition>
             </v-col>
             <v-col>
               <v-img src="@/assets/4.jpg" class="img" @click="show = 3"/>
+            <transition name="slide">
+              <div v-if="show === 3" class="box3">
+                  {{ tada1 }}
+              </div>
+            </transition>
             </v-col>
           </v-row>
           <transition name="slide">
             <div v-if="show === 0" class="box0"
             >
               Click on the image to see our detail!
-            </div>
-            </transition>
-            <transition name="slide">
-            <div v-if="show === 1" class="box1">
-                {{ tada1 }}
-            </div>
-            </transition>
-            <transition name="slide">
-            <div v-if="show === 2" class="box2">
-                {{ tada1 }}
-            </div>
-            </transition>
-            <transition name="slide">
-            <div v-if="show === 3" class="box3">
-                {{ tada1 }}
             </div>
           </transition>
         </template>
@@ -68,6 +68,9 @@ export default {
 #content {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.memberPics {
+  margin-top: 0%;
+}
 .box0 {
   position: fixed;
   width: 100%;
@@ -78,9 +81,9 @@ export default {
 }
 .box1 {
   background-color: gainsboro;
-  height: 750px;
+  height: 100%;
   position: fixed;
-  width: 100%;
+  width: 30%;
   margin-top: 10px;
   right: 0px;
 }
@@ -121,5 +124,13 @@ export default {
 }
 .slide-leave-to {
   transform: translate(-100%, 0);
+}
+.wrapper {
+  box-sizing: border-box;
+  resize: horizontal;
+  /* border: 1px dashed; */
+  overflow: auto;
+  max-width: 100%;
+  height: calc(50vh - 16px);
 }
 </style>
