@@ -3,7 +3,7 @@
     <v-main>
       <Layout>
         <template #content>
-          <div align-center style="">
+          <div align-center>
               <img
                     src="@/assets/cara.png"
                     max-width=250px
@@ -24,8 +24,8 @@
                     accepted-file-types="image/*"
                     :server="server"
                   />
+                  <v-btn @click="onUpload">upload</v-btn>
             </div>
-            <button @click="imgokbtn">upload</button>
         </template>
       </Layout>
     </v-main>
@@ -61,19 +61,7 @@ export default {
     FilePond
   },
   methods: {
-    onFileSelected (event) {
-      this.selectedFile = event.target.files[0]
-      console.log(this.selectedFile)
-    },
-    onUpload () {
-      const fd = new FormData()
-      fd.append('inmage', this.selectedFile, this.selectedFile.name)
-      axios.post('http://127.0.0.1:5000/', fd)
-        .then(res => {
-          console.log(res)
-        })
-    },
-    imgokbtn (nick) {
+    onUpload (nick) {
       this.inputpoto = false
       // console.log('myFiles : ' + nick)
       const file = this.$refs.pond.getFile()
@@ -87,6 +75,7 @@ export default {
           this.file = res.data.join('-')
           console.log('file : ' + this.file)
           this.grapclick(0, 0)
+          this.router.push('result')
         })
         .catch(err => {
           alert(err)
@@ -99,10 +88,5 @@ export default {
 <style scoped>
 div {
   border: 2px solid black;
-}
-.md-grow-0 {
-  flex-grow: 0;
-}
-.bot {
 }
 </style>

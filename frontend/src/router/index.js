@@ -10,6 +10,7 @@ import login from '../views/Login.vue'
 import analysis from '../views/analysis.vue'
 import about from '../views/about.vue'
 import member from '../views/member.vue'
+import result from '../views/result.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/upload',
     name: 'upload',
     component: upload
+  },
+  {
+    path: '/result',
+    name: 'result',
+    component: result
   },
   {
     path: '/analysis',

@@ -21,8 +21,11 @@
   transform: translate(-100%, 0);
   opacity: 0;
 }
-.main {position: absolute;
-width: 100%;
-left: 0;
+.main {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 4%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>
