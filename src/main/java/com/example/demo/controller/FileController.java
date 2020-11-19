@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javassist.expr.Instanceof;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.lang.reflect.Field;
@@ -26,7 +28,7 @@ public class FileController {
         String original = "";
         if(request instanceof MultipartHttpServletRequest)       //  request가 MultipartHttpServletRequest 로형변환 가능한가
         {
-            log.info("yes");
+            log.info(original + "requested");
             mult = (MultipartHttpServletRequest)request;
 
             Iterator<String> iterator = mult.getFileNames();
@@ -56,11 +58,12 @@ public class FileController {
     @PostMapping("/remove")
     public void remove(@RequestBody String path) throws Exception
     {
-        log.info("path : " + path);
+        File f = new File(path);
+        log.info(f + " will be deleted from" + path);
         if(path != null) {
-            File f = new File(path);
             if(f.exists()){
                 f.delete();
+                log.info(f + " has been deleted");
             }
         }
     }
@@ -71,7 +74,7 @@ public class FileController {
         log.info("Controller File Load");
         if(request instanceof MultipartHttpServletRequest)       //  request가 MultipartHttpServletRequest 로형변환 가능한가
         {
-            log.info("Log yes");
+            log.info("Controller can be loaded");
         }
     }
 
