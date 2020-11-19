@@ -75,6 +75,7 @@ export default {
           this.file = res.data.join('-')
           console.log('file : ' + this.file)
           this.grapclick(0, 0)
+          this.router.push('result')
         })
         .catch(err => {
           alert(err)

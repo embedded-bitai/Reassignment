@@ -6,32 +6,40 @@
         <template #content>
           <v-row class="memberPics">
             <v-col class="col">
-              <v-img src="@/assets/1.jpg" class="img" @click="show = 1" />
+              <v-img src="@/assets/10.jpg" class="img" @click="show = 1" />
               <transition name="slide">
               <div v-if="show === 1" class="box1">
-                  {{ tada1 }}
+                <v-row no-gutters>
+                  <v-col>
+                    <h6>이름:</h6>
+                  </v-col>
+                  <v-col offset="-7">
+                    <h6>경완~</h6>
+                  </v-col>
+                </v-row>
               </div>
               </transition>
             </v-col>
             <v-col>
-              <v-img src="@/assets/3.jpg" class="img" @click="show = 2"/>
+              <v-img src="@/assets/6.jpg" class="img" @click="show = 2"/>
               <transition name="slide">
               <div v-if="show === 2" class="box2">
-                  {{ tada1 }}
+                <h1>종후</h1>
               </div>
               </transition>
             </v-col>
             <v-col>
-              <v-img src="@/assets/4.jpg" class="img" @click="show = 3"/>
+              <v-img src="@/assets/mundo.jpg" class="img" @click="show = 3"/>
             <transition name="slide">
               <div v-if="show === 3" class="box3">
-                  {{ tada1 }}
+                <h1>승준</h1>
               </div>
             </transition>
             </v-col>
           </v-row>
           <transition name="slide">
-            <div v-if="show === 0" class="box0"
+            <div v-if="show === 0"
+                 class="box0"
             >
               Click on the image to see our detail!
             </div>
@@ -48,10 +56,7 @@ import Layout from '../components/Layout'
 export default {
   data () {
     return {
-      show: 0,
-      tada1: 'tada',
-      tada2: 'tada',
-      tada3: 'tada'
+      show: 0
     }
   },
   components: {
@@ -65,45 +70,47 @@ export default {
 </script>
 
 <style scoped>
+
 #content {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  height: 100%;
+}
+
+div {
+  /* border: 2px solid black; */
 }
 .memberPics {
   margin-top: 0%;
 }
 .box0 {
-  position: fixed;
+  margin-top: 10vh;
   width: 100%;
-  height: 100%;
-  margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
-  left: 0;
-  right: 0;
+  height: 50vh;
+  padding: 10px;
+  font-size: 3vw;
+  text-align: center;
 }
 .box1 {
   background-color: gainsboro;
   height: 100%;
   position: fixed;
   width: 30%;
-  margin-top: 10px;
+  margin-top: 5vh;
 }
 .box2 {
   background-color: whitesmoke;
   height: 100%;
   position: fixed;
   width: 30%;
-  margin-top: 10px;
+  margin-top: 5vh;
 }
 .box3 {
-  background-color: aliceblue;
+  background-color: red;
   height: 100%;
   position: fixed;
   width: 30%;
-  margin-top: 10px;
+  margin-top: 5vh;
 }
-#content {
-  height: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+
 .img {
   border-radius: 50%;
   height: 200px;
@@ -112,15 +119,16 @@ export default {
 .col {
   text-align: -webkit-center;
 }
-.slide-leave-active,
-.slide-enter-active {
-  transition: 1s;
+.slide-item {
+  display: inline-block;
+  margin-right: 10px;
 }
-.slide-enter {
-  transform: translate(100%, 0);
+.slide-enter-active, .slide-leave-active {
+  transition: all 1s;
 }
-.slide-leave-to {
-  transform: translate(-100%, 0);
+.slide-enter, .slide-leave-to /* .slide-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(150vh);
 }
 .wrapper {
   box-sizing: border-box;
@@ -128,6 +136,6 @@ export default {
   /* border: 1px dashed; */
   overflow: auto;
   max-width: 100%;
-  height: calc(50vh - 16px);
+  height: calc(105vh - 16px);
 }
 </style>

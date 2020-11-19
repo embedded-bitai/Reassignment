@@ -36,9 +36,9 @@
                 </v-col>
               </v-row>
             </v-parallax>
-            <div class="para">
+          </div>
+          <div class="para">
               <h1>WHY US?</h1>
-            </div>
           </div>
           <div class="thirdSection">
             <v-flex>
@@ -82,6 +82,7 @@
             </v-flex>
           </div>
         </v-container>
+        <footerComp class="footer"/>
       </template>
     </Layout>
   </v-main>
@@ -135,7 +136,7 @@ h6 {
 }
 
 .thirdSection {
-  margin-top: 50vh;
+  margin-top: 35vh;
   text-align: center;
 }
 
@@ -161,10 +162,8 @@ h6 {
 
 .headerDesc {
   font-size: 1.5vw;
+  letter-spacing: 10px;
   border-bottom: 1px dotted #000000;
-}
-
-.descCol {
 }
 
 .bodyDesc {
@@ -190,25 +189,30 @@ h6 {
 
 .para {
   position: absolute;
-  margin-top: 25vh;
-  margin-left: 51vw;
-  font-size: 10vh;
+  left: 49vw;
+  margin-top: 10vh;
+  font-size: 9.5vh;
+  display: flex;
+  letter-spacing: 10px;
 }
 
 .para2 {
   position: absolute;
+  left: 3vw;
   margin-top: 50vh;
   font-size: 6vh;
 }
 
 .para3 {
   position: absolute;
+  left: 3vw;
   margin-top: 58vh;
   font-size: 8vh;
 }
 
 .para4 {
   position: absolute;
+  left: 3vw;
   margin-top: 70vh;
   font-size: 6vh;
 }
@@ -220,12 +224,18 @@ h6 {
   padding-right: 5vw;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .wrapper {
   box-sizing: border-box;
   resize: horizontal;
   /* border: 1px dashed; */
   overflow: auto;
   max-width: 100%;
-  height: calc(400vh - 16px);
+  height: calc(350vh - 16px);
 }
 </style>

@@ -57,7 +57,4 @@ export default {
   letter-spacing: 5px;
   margin-left: 1.6vw;
 }
-
-.menuBar {
-}
 </style>
