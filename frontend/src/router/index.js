@@ -7,7 +7,6 @@ import signUp from '../views/signUp.vue'
 import Logout from '../views/Logout.vue'
 import apply from '../views/apply.vue'
 import login from '../views/Login.vue'
-import analysis from '../views/analysis.vue'
 import about from '../views/about.vue'
 import member from '../views/member.vue'
 import result from '../views/result.vue'
@@ -26,14 +25,9 @@ const routes = [
     component: upload
   },
   {
-    path: '/result',
+    path: '/result/:id',
     name: 'result',
     component: result
-  },
-  {
-    path: '/analysis',
-    name: 'analysis',
-    component: analysis
   },
   {
     path: '/about',

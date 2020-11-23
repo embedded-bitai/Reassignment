@@ -1,20 +1,20 @@
 <template>
-  <v-responsive style="aspect-ratio: 16:9">
-    <v-main>
+  <v-responsive class="wrapper">
+    <v-main style="padding-top: 2%">
       <Layout>
         <template #content>
-          <div align-center>
+          <div style="text-align: center;">
               <img
                     src="@/assets/cara.png"
                     max-width=250px
                     max-height=250x
                     align-content="center"
               />
-              <div>
+          </div>
+              <div class="botTalk">
                 <h1>어서오세요 당신의 이미지를 올려주세요</h1>
                 <h1>이미지를 올리면 물체를 파악하여 결과값을 보여줍니다.</h1>
               </div>
-          </div>
             <div>
               <file-pond
                     name="bin"
@@ -23,8 +23,9 @@
                     max-files="1"
                     accepted-file-types="image/*"
                     :server="server"
+                    class="filePond"
                   />
-                  <v-btn @click="onUpload">upload</v-btn>
+                  <v-btn @click="onUpload()">upload</v-btn>
             </div>
         </template>
       </Layout>
@@ -44,6 +45,7 @@ export default {
   data () {
     return {
       selectedFile: null,
+      nick: [],
       server: {
         url: 'http://localhost:1234/file',
         process: {
@@ -60,22 +62,19 @@ export default {
     Layout,
     FilePond
   },
+  mounted () {
+    console.log(this.$store.state.nick)
+  },
   methods: {
-    onUpload (nick) {
-      this.inputpoto = false
+    onUpload () {
       // console.log('myFiles : ' + nick)
       const file = this.$refs.pond.getFile()
-      nick = file.filename
+      const nick = file.filename
       console.log('file Name : ' + nick)
       axios.post('http://127.0.0.1:5000/img', { nick })
         .then(res => {
-          console.log('res.data : ' + res.data)
-          this.pylistrember(res.data)
-          this.gra = res.data
-          this.file = res.data.join('-')
-          console.log('file : ' + this.file)
-          this.grapclick(0, 0)
-          this.router.push('result')
+          console.log(res.data)
+          this.$router.push({ name: 'result', params: { id: res.data } })
         })
         .catch(err => {
           alert(err)
@@ -87,6 +86,29 @@ export default {
 
 <style scoped>
 div {
-  border: 2px solid black;
+  /* border: 2px solid black; */
+}
+
+.wrapper {
+  box-sizing: border-box;
+  resize: horizontal;
+  /* border: 1px dashed; */
+  overflow: auto;
+  max-width: 100%;
+  height: calc(100vh - 16px);
+}
+
+.botTalk {
+  margin: 10%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.filepond--item {
+    width: 10px;
+}
+
+.filepond--drop-label {
+    color: #555;
 }
 </style>
