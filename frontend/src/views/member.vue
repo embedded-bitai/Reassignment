@@ -11,10 +11,8 @@
               <div v-if="show === 1" class="box1">
                 <v-row no-gutters>
                   <v-col class="memberBox">
-                    <h6>이름:</h6>
-                  </v-col>
-                  <v-col offset="-7">
-                    <h6>경완~</h6>
+                    <h6>프론트 일부분과 파이썬으로 이미지 분석하는 코드를 만들었습니다.
+이번에 flask를 사용하면서 많은 어려움이 있었지만 다행히 완성되어서 기쁩니다. ? 같은 것들만 생각나네</h6>
                   </v-col>
                 </v-row>
               </div>

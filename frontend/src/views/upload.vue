@@ -25,7 +25,7 @@
                     :server="server"
                     class="filePond"
                   />
-                  <v-btn @click="onUpload()">upload</v-btn>
+                  <v-btn @click="onUpload(nick)">upload</v-btn>
             </div>
         </template>
       </Layout>
@@ -45,7 +45,8 @@ export default {
   data () {
     return {
       selectedFile: null,
-      nick: [],
+      nick: '',
+      idlist: [],
       server: {
         url: 'http://localhost:1234/file',
         process: {
@@ -66,15 +67,18 @@ export default {
     console.log(this.$store.state.nick)
   },
   methods: {
-    onUpload () {
+    onUpload (nick) {
       // console.log('myFiles : ' + nick)
       const file = this.$refs.pond.getFile()
-      const nick = file.filename
+      nick = file.filename
       console.log('file Name : ' + nick)
       axios.post('http://127.0.0.1:5000/img', { nick })
         .then(res => {
           console.log(res.data)
-          this.$router.push({ name: 'result', params: { id: res.data } })
+          for (let i = 0; i < res.data.length; i++) {
+            this.idlist[i] = res.data[i]
+          }
+          this.$router.push({ name: 'result', params: { id: this.idlist, image: nick } })
         })
         .catch(err => {
           alert(err)
@@ -99,7 +103,7 @@ div {
 }
 
 .botTalk {
-  margin: 10%;
+  margin: 5%;
   text-align: center;
   vertical-align: middle;
 }

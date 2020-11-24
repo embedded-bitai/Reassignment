@@ -25,9 +25,14 @@ const routes = [
     component: upload
   },
   {
-    path: '/result/:id',
+    path: '/result',
     name: 'result',
-    component: result
+    components: {
+      default: result
+    },
+    props: {
+      default: true
+    }
   },
   {
     path: '/about',
