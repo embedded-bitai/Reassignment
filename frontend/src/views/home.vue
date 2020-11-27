@@ -4,14 +4,13 @@
     <Layout>
       <template #content>
         <v-container class="header">
-          <v-row class="firstDiv">
+          <v-row>
             <v-col class="col">
               <div class="text">
                 <p v-scrollanimation>BIT IMAGE는 기계 학습을 통해</p>
                 <p v-scrollanimation>당신의 이미지를 분석합니다.</p>
                 <br />
-                <h6 v-scrollanimation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum non consectetur a erat nam at lectus urna. Massa eget egestas purus viverra accumsan in nisl. Integer enim neque volutpat ac tincidunt. Cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Est sit amet facilisis magna etiam tempor orci. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate. Et pharetra pharetra massa massa. Et magnis dis parturient montes nascetur ridiculus. Tempus iaculis urna id volutpat lacus laoreet non curabitur. Elementum facilisis leo vel fringilla est. Ut morbi tincidunt augue interdum velit. Ullamcorper dignissim cras tincidunt lobortis feugiat. Vel facilisis volutpat est velit egestas. Sodales ut etiam sit amet nisl purus in mollis. Libero enim sed faucibus turpis in eu mi bibendum. Aliquam vestibulum morbi blandit cursus risus at.
-                </h6>
+                <h6 v-scrollanimation>CNN 이라는 검증된 라이브러리를 사용하여 정확도 높은 결과로 증명합니다. 또한 깔끔하고 인터렉티브한 UI로 더 나은 사용환경을 제공합니다.</h6>
                 <transition name="button>">
                   <div class="button">
                     <v-btn next to="/upload">시작하기</v-btn>
@@ -189,7 +188,7 @@ h6 {
 
 .para {
   position: absolute;
-  left: 49vw;
+  left: 45vw;
   margin-top: 10vh;
   font-size: 9.5vh;
   display: flex;
@@ -218,7 +217,7 @@ h6 {
 }
 
 .text {
-  font-size: 75px;
+  font-size: 65px;
   font-weight: 900;
   padding-top: 5vh;
   padding-right: 5vw;

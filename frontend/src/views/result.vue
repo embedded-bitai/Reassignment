@@ -4,7 +4,7 @@
     <Layout>
       <template #content>
         <div style="text-align: center;">
-          <img src="@/assets/cara.png" max-width=250px max-height=250x/>
+          <img src="@/assets/botPic.jpg" width=300vw height=200vh/>
         </div>
         <div class="botTalk">
           <h1>당신의 이미지 분석 결과입니다.</h1>
@@ -12,7 +12,7 @@
         </div>
         <v-row>
           <v-col style="text-align: -webkit-right;">
-            <v-img :src="require(`/Users/richardmoon/Desktop/Project/Reassignment/proj/python/`+$route.params.image)" class="resultImage"></v-img>
+            <v-img :src="require(`/Users/richardmoon/Desktop/Project/real/Reassignment/proj/python/`+$route.params.image)" class="resultImage"></v-img>
           </v-col>
           <v-col style="text-transform: uppercase;">
             <h4>{{ id[0][0][0] }}: {{ id[0][0][1] }}%</h4>
@@ -23,7 +23,7 @@
           </v-col>
         </v-row>
         <div style="text-align: -webkit-center;">
-        <v-btn next to="/upload">다시하기</v-btn>
+          <v-btn next to="/upload">다시하기</v-btn>
         </div>
       </template>
     </Layout>
@@ -62,7 +62,7 @@ div {
   /* border: 1px dashed; */
   overflow: auto;
   max-width: 100%;
-  height: calc(100vh - 16px);
+  height: auto;
 }
 
 .botTalk {

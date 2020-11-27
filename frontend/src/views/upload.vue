@@ -1,36 +1,23 @@
 <template>
-  <v-responsive class="wrapper">
-    <v-main style="padding-top: 2%">
-      <Layout>
-        <template #content>
-          <div style="text-align: center;">
-              <img
-                    src="@/assets/cara.png"
-                    max-width=250px
-                    max-height=250x
-                    align-content="center"
-              />
-          </div>
-              <div class="botTalk">
-                <h1>어서오세요 당신의 이미지를 올려주세요</h1>
-                <h1>이미지를 올리면 물체를 파악하여 결과값을 보여줍니다.</h1>
-              </div>
-            <div>
-              <file-pond
-                    name="bin"
-                    ref="pond"
-                    allow-multiple="false"
-                    max-files="1"
-                    accepted-file-types="image/*"
-                    :server="server"
-                    class="filePond"
-                  />
-                  <v-btn @click="onUpload(nick)">upload</v-btn>
-            </div>
-        </template>
-      </Layout>
-    </v-main>
-  </v-responsive>
+<v-responsive class="wrapper">
+  <v-main style="padding-top: 2%">
+    <Layout>
+      <template #content>
+        <div style="text-align: center;">
+          <img src="@/assets/botPic.jpg" width=300vw height=200vh align-content="center" />
+        </div>
+        <div class="botTalk">
+          <h1>어서오세요 당신의 이미지를 올려주세요</h1>
+          <h1>이미지를 올리면 물체를 파악하여 결과값을 보여줍니다.</h1>
+        </div>
+        <div>
+          <file-pond name="bin" ref="pond" allow-multiple="false" max-files="1" accepted-file-types="image/*" :server="server" class="filePond" />
+          <v-btn @click="onUpload(nick)">upload</v-btn>
+        </div>
+      </template>
+    </Layout>
+  </v-main>
+</v-responsive>
 </template>
 
 <script>
@@ -72,13 +59,21 @@ export default {
       const file = this.$refs.pond.getFile()
       nick = file.filename
       console.log('file Name : ' + nick)
-      axios.post('http://127.0.0.1:5000/img', { nick })
+      axios.post('http://localhost:5000/img', {
+        nick
+      })
         .then(res => {
           console.log(res.data)
           for (let i = 0; i < res.data.length; i++) {
             this.idlist[i] = res.data[i]
           }
-          this.$router.push({ name: 'result', params: { id: this.idlist, image: nick } })
+          this.$router.push({
+            name: 'result',
+            params: {
+              id: this.idlist,
+              image: nick
+            }
+          })
         })
         .catch(err => {
           alert(err)
@@ -109,10 +104,10 @@ div {
 }
 
 .filepond--item {
-    width: 10px;
+  width: 10px;
 }
 
 .filepond--drop-label {
-    color: #555;
+  color: #555;
 }
 </style>
