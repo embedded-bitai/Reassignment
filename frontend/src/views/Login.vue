@@ -2,9 +2,9 @@
 <v-responsive style="aspect-ratio: 16:9">
   <v-main>
     <v-container fluid style="padding: 5px">
-      <v-img src="@/assets/1.jpg" max-height="700px">
+      <v-img src="@/assets/5.jpg" max-height="700px">
         <div id="header">
-          <h1>BIT MUSIC</h1>
+          <h1>BIT IMAGE</h1>
         </div>
         <v-row align="center" justify="center">
           <v-col sm="5" id="login">

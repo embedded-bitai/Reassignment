@@ -1,27 +1,27 @@
 <template>
-  <v-main>
-    <v-responsive style="aspect-ratio: 16:9">
+<v-main>
+  <v-responsive style='aspect-ratio: 16:9'>
     <v-container fluid>
-      <v-img src="@/assets/4.jpg" max-height="800px">
-      <div id="text">
-        <h1>NEW NORMAL</h1>
-      </div>
-        <v-row align="center" justify="center">
-          <v-col sm="4" id="login">
-          <form @submit.prevent="onSubmit">
-            <v-text-field id="id" label="ID" type="id" required :rules="idRules" v-model="userId"/>
-            <v-text-field id="email" label="E-MAIL" type="email" required v-model="email" :rules="emailRules" />
-            <v-text-field id="nickName" label="NAME" required v-model="userName" />
-            <v-text-field id="pw" label="PASSWORD" type="password" required :rules="passwordRules" v-model="userPw"/>
-            <v-btn style="margin-right: 30px;" color="gray" type="submit">REGISTER</v-btn>
-            <v-btn style="margin-left: 30px;" next to="/">CANCEL</v-btn>
-          </form>
+      <v-img src='@/assets/7.png' max-height='800px'>
+        <div id='text'>
+          <h1>WELCOME</h1>
+        </div>
+        <v-row align='center' justify='center'>
+          <v-col sm='4' id='login'>
+            <form @submit.prevent='onSubmit'>
+              <v-text-field id='id' label='ID' type='id' required :rules='idRules' v-model='userId' />
+              <v-text-field id='email' label='E-MAIL' type='email' required v-model='email' :rules='emailRules' />
+              <v-text-field id='nickName' label='NAME' required v-model='userName' />
+              <v-text-field id='pw' label='PASSWORD' type='password' required :rules='passwordRules' v-model='userPw' />
+              <v-btn style='margin-right: 30px' color='gray' type='submit'>REGISTER</v-btn>
+              <v-btn style='margin-left: 30px' next to='/'>CANCEL</v-btn>
+            </form>
           </v-col>
         </v-row>
       </v-img>
     </v-container>
-    </v-responsive>
-  </v-main>
+  </v-responsive>
+</v-main>
 </template>
 
 <script>
@@ -68,10 +68,8 @@ export default {
 
 <style scoped>
   div {
-    //border: 2px solid black;
     font-family: Ubuntu;
     text-align: center;
-    //text-decoration: underline;
     margin: 10px;
     padding: 20px;
   }

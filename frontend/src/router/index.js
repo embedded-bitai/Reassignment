@@ -5,7 +5,6 @@ import home from '../views/home.vue'
 import upload from '../views/upload.vue'
 import signUp from '../views/signUp.vue'
 import Logout from '../views/Logout.vue'
-import apply from '../views/apply.vue'
 import login from '../views/Login.vue'
 import about from '../views/about.vue'
 import member from '../views/member.vue'
@@ -58,11 +57,6 @@ const routes = [
     path: '/Logout',
     name: 'Logout',
     component: Logout
-  },
-  {
-    path: '/apply',
-    name: 'apply',
-    component: apply
   }
 ]
 
